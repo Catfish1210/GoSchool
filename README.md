@@ -1,0 +1,2 @@
+# GoSchool
+Exercises in Go
