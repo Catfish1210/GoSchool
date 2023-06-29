@@ -5,7 +5,7 @@ func Codewars006(str string) string {
 	count := 0
 	for _, v := range str {
 		for _, v2 := range str {
-			if v == v2 || v == v2+32 || v+32 == v2 {
+			if v == v2 || v == v2+32 && (v2 < 122 && v2 > 97) || v2 == v+32 && (v < 122 && v > 97) {
 				count++
 			}
 		}
