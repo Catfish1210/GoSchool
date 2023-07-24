@@ -2,17 +2,66 @@ package goschool
 
 import "testing"
 
-/*
-   Write the rgb function so that passing in RGB decimal values will
-   result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255.
-   Any values that fall out of that range must be rounded to the closest valid value.
+func TestCodewars008(t *testing.T) {
+	got := Codewars008(3)
+	want := [][]int{
+		{1, 2, 3},
+		{2, 4, 6},
+		{3, 6, 9},
+	}
+	for i, v := range got {
+		for j, val := range v {
+			if val != got[i][j] {
+				t.Errorf("got %q, wanted %q", val, want)
+			}
+		}
+	}
+}
+func TestCodewars007(t *testing.T) {
+	inputs := []uint32{
+		2149583361,
+		32,
+		0,
+	}
+	outputs := []string{"128.32.10.1", "0.0.0.32", "0.0.0.0"}
+	for i, v := range inputs {
+		got := Codewars007(v)
+		want := outputs[i]
+		if got != want {
+			t.Errorf("got %q, wanted %q", got, want)
+		}
+	}
+}
+func TestCodewars006(t *testing.T) {
+	inputs := []string{
+		"stress",
+		"sTreSs",
+	}
+	outputs := []string{"t", "T"}
+	for i, v := range inputs {
+		got := Codewars006(v)
+		want := outputs[i]
+		if got != want {
+			t.Errorf("got %q, wanted %q", got, want)
+		}
+	}
+}
+func TestCodewars005(t *testing.T) {
+	inputs := []string{
+		"MCMXC",
+		"MMVIII",
+		"MDCLXVI",
+	}
+	outputs := []int{1990, 2008, 1666}
+	for i, v := range inputs {
+		got := Codewars005(v)
+		want := outputs[i]
+		if got != want {
+			t.Errorf("got %q, wanted %q", got, want)
+		}
+	}
+}
 
-   Examples:
-	rgb(255, 255, 255) -- returns FFFFFF
-	rgb(255, 255, 300) -- returns FFFFFF
-	rgb(0, 0, 0) -- returns 000000
-	rgb(148, 0, 211) -- returns 9400D3
-*/
 func TestCodewars004(t *testing.T) {
 	inputs := [][]int{
 		{255, 255, 255},
